@@ -1,0 +1,4 @@
+selenium==3.141.0
+pytest-dotenv==0.4.0
+pytest==4.2.1
+

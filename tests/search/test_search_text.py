@@ -10,16 +10,15 @@ def test_search_text(browser):
     "Preconditions: Navigate to the Google Page"
     search_page.navigate_to_page()
 
-    "Step: Enter the text 'Selenium' in the Search field"
-    search_page.set_search_field(SearchValue.SELENIUM_TEXT.value)
-
-    "Step: Click the Search button"
-    search_page.search_field_submit()
+    "Step: Enter the text 'Selenium' in the Search field and click the Search button"
+    results = search_page \
+        .set_search_field(SearchValue.SELENIUM_TEXT.value) \
+        .search_field_submit() \
+        .find_elements(search_page.RESULT_TEXT)
 
     "Expected: Verify that the 'Selenium' text is displayed in each results"
-    results = search_page.find_elements(search_page.RESULT_TEXT)
 
-    print("Result of search")
+    print("\nResult of search is:")
     print(len(results))
 
     assert all([search_page.SELENIUM_TEXT in result.text for result in results]), \

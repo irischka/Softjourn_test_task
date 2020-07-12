@@ -18,7 +18,7 @@ class BasePage:
         )
 
     def navigate_to_page(self):
-        """ Use for command line"""
+        """ Use for command line """
         # self.driver.get(os.environ["automation_test_url"])
 
         """ Use for Run in IDE """

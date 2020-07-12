@@ -7,6 +7,5 @@ python -m pytest -v -c pytest-dev.ini
 pytest -v -c pytest-dev.ini
 
 #run test report
-python -m pytest --alluredir ./reports
-allure generate -c ./reports
+pytest -v -s --alluredir="reports"
 allure serve ./reports
